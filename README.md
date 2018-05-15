@@ -1,5 +1,7 @@
 # PopupElement
 
+This project was me implementing a simple Angular Elements project.  I followed the article at https://nitayneeman.com/posts/a-practical-guide-to-angular-elements/ 
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
 
 ## Development server
