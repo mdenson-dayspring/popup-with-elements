@@ -1,16 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Injector } from '@angular/core';
+import { createCustomElement } from '@angular/elements';
 
-import { AppComponent } from './app.component';
+import { MadeWithLoveComponent } from './made-with-love/made-with-love.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
   imports: [
     BrowserModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  declarations: [
+    MadeWithLoveComponent  
+  ],
+  entryComponents: [
+    MadeWithLoveComponent  
+  ]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private injector: Injector) {
+    const customElement = createCustomElement(MadeWithLoveComponent, { injector });
+    customElements.define('made-with-love', customElement);
+  } 
+  ngDoBootstrap() { }
+}
